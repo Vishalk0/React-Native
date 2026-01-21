@@ -1,6 +1,21 @@
 import React, { useState } from 'react';
 import { Text, View, Image, TouchableOpacity, Alert, StyleSheet, useColorScheme, FlatList, Button, TextInput } from 'react-native';
+import Home from './src/screen/Home'
+import Profile from './src/screen/Profile'
+import Search from './src/screen/Search'
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { NavigationContainer } from '@react-navigation/native';
 
+const Stack = createNativeStackNavigator();
+const StackNavigation = () => {
+  return (
+    <Stack.Navigator>
+      <Stack.Screen name="Home" component={Home} />
+      <Stack.Screen name="Search" component={Search} />
+      <Stack.Screen name="Profile" component={Profile} />
+    </Stack.Navigator>
+  )
+}
 
 const dummy = [
   { id: 1, name: "Vishal", email: "vishu@gmail.com", image: "https://unsplash.com/photos/vegetable-and-meat-on-bowl-kcA-c3f_3FE" },
@@ -55,20 +70,32 @@ const New = () => {
     </View>
   );
 };
+const Nav = () => {
+  return (
 
-export default New;
+
+    <NavigationContainer>
+      <StackNavigation />
+    </NavigationContainer>
+
+
+  );
+
+};
+
+export default Nav;
 
 const styles = StyleSheet.create({
   container: {
-    // height: "100%",
-    // width: "100%",
-    flex:1,
+    height: "100%",
+    width: "100%",
+    flex: 1,
     backgroundColor: "#dadada",
     paddingVertical: 10,
     paddingHorizontal: 5,
     justifyContent: 'center',
     gap: 10,
-    alignItems:"center"
+    alignItems: "center"
   },
   Card: {
     height: "100",
@@ -84,21 +111,21 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     borderWidth: 1,
     paddingVertical: 10,
-    justifyContent:"center",
-    alignContent:"center",
-    alignItems:"center"
+    justifyContent: "center",
+    alignContent: "center",
+    alignItems: "center"
 
   },
-  textStyle:{
-    fontSize:20,
-    fontWeight:'bold'
+  textStyle: {
+    fontSize: 20,
+    fontWeight: 'bold'
   },
-  button:{
-    width:100,
-    height:100,
-    borderRadius:10,
-    alignContent:"center",
-    justifyContent:"center"
+  button: {
+    width: 100,
+    height: 100,
+    borderRadius: 10,
+    alignContent: "center",
+    justifyContent: "center"
   }
 
 })
