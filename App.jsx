@@ -11,7 +11,7 @@ const StackNavigation = () => {
   return (
     <Stack.Navigator initialRouteName='Home'
     screenOptions={{headerStyle:{
-      backgroundColor:"yello"
+      backgroundColor:"yellow"
     }}}
     >
 
