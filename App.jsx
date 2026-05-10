@@ -1,12 +1,18 @@
 import React, { useState } from 'react';
-import { Text, View, Image, TouchableOpacity, Alert, StyleSheet, useColorScheme, FlatList, Button, TextInput } from 'react-native';
-import Home from './src/screen/Home'
-import Profile from './src/screen/Profile'
-import Search from './src/screen/Search'
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { NavigationContainer } from '@react-navigation/native';
+import { Text, View, Image, SectionList,TouchableOpacity, Alert, StyleSheet, useColorScheme, FlatList, Button, TextInput } from 'react-native';
+// import Home from './src/screen/Home'
+// import Profile from './src/screen/Profile'
+// import Search from './src/screen/Search'
+// import FlatListScreen from './src/Component/FlateListScreen'
+import sectionList from './src/Component/sectionList'
+import LoginForm from './src/Component/LoginForm'
 
-const Stack = createNativeStackNavigator();
+
+// import { createNativeStackNavigator } from '@react-navigation/native-stack';
+// import { NavigationContainer } from '@react-navigation/native';
+
+
+// const Stack = createNativeStackNavigator();
 const StackNavigation = () => {
   return (
     <Stack.Navigator initialRouteName='Home'
@@ -82,13 +88,23 @@ const Nav = () => {
     <NavigationContainer>
       <StackNavigation />
     </NavigationContainer>
+    
 
 
   );
 
 };
+const demo=()=>{
+return(
+ <View>
+ <LoginForm/>
 
-export default Nav;
+ </View>
+  
+)
+}
+
+export default demo;
 
 const styles = StyleSheet.create({
   container: {
