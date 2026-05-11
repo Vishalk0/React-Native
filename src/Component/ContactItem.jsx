@@ -12,4 +12,11 @@ const ContactItem = ({name,email}) => {
 
 export default ContactItem
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+    container:{
+        justifyContent:"center",
+        flexDirection:"row",
+        
+
+    }
+})
