@@ -11,7 +11,7 @@ class ClassComponent extends Component {
         }
     }
     updateName=()=>{
-        this.setState({myname:'Kushwaha'})
+        this.setState({myname:'Kushwahaf'})
     }
     render() {
          return(
