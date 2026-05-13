@@ -4,8 +4,9 @@ import { Text, View, Image, SectionList,TouchableOpacity, Alert, StyleSheet, use
 // import Profile from './src/screen/Profile'
 // import Search from './src/screen/Search'
 // import FlatListScreen from './src/Component/FlateListScreen'
-import sectionList from './src/Component/sectionList'
-import LoginForm from './src/Component/LoginForm'
+// import sectionList from './src/Component/sectionList'
+// import LoginForm from './src/Component/LoginForm'
+import UseEffectHook from './src/UseEffect(lifecycle)/UseEffectHook'
 
 
 // import { createNativeStackNavigator } from '@react-navigation/native-stack';
@@ -97,7 +98,7 @@ const Nav = () => {
 const demo=()=>{
 return(
  <View>
- <LoginForm/>
+ <UseEffectHook/>
 
  </View>
   
