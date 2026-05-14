@@ -7,6 +7,7 @@ import { Text, View, Image, SectionList,TouchableOpacity, Alert, StyleSheet, use
 // import sectionList from './src/Component/sectionList'
 // import LoginForm from './src/Component/LoginForm'
 import UseEffectHook from './src/UseEffect(lifecycle)/UseEffectHook'
+import Togglebtn from './src/Component/Togglebtn'
 
 
 // import { createNativeStackNavigator } from '@react-navigation/native-stack';
@@ -98,7 +99,7 @@ const Nav = () => {
 const demo=()=>{
 return(
  <View>
- <UseEffectHook/>
+ <Togglebtn />
 
  </View>
   
