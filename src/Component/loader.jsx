@@ -4,6 +4,9 @@ import React, { useState } from 'react'
 
 const loader = () => {
     const [load, setload] = useState(false)
+    const toggleLoder=()=>{
+setload(!load)
+    }
     return (
         <View>
             
