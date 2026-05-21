@@ -18,6 +18,9 @@ class ClassComponent extends Component {
             <View>
                 <Text style={{fontSize:30}}>Name:{this.state.myname}</Text>
                 <Button />
+                <Pressable>
+                    <Text>Click Here</Text>
+                </Pressable>
             </View>  
          )
     }
