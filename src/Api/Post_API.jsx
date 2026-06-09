@@ -20,6 +20,9 @@ const Post_API = () => {
       <TextInput
       placeholder='Enter Your Age'
       />
+      <TextInput
+      placeholder='Enter Your Profession'
+      />
       <Button title='Submit'/>
     </View>
   )
