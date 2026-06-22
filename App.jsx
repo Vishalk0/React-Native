@@ -8,6 +8,7 @@ import { Text, View, Image, SectionList,TouchableOpacity, Alert, StyleSheet, use
 // import LoginForm from './src/Component/LoginForm'
 import UseEffectHook from './src/UseEffect(lifecycle)/UseEffectHook'
 import Togglebtn from './src/Component/Togglebtn'
+import { SearchBar } from 'react-native-screens';
 
 
 // import { createNativeStackNavigator } from '@react-navigation/native-stack';
@@ -99,7 +100,8 @@ const Nav = () => {
 const demo=()=>{
 return(
  <View>
- <Togglebtn />
+ {/* <Togglebtn /> */}
+ <SearchBar/>
 
  </View>
   
