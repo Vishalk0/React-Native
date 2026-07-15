@@ -24,9 +24,21 @@ const StackNavigation = () => {
     }}}
     >
 
-      <Stack.Screen name="Home" component={Home} options={{headerShown:false}} />
+      <Stack.Screen name="Home" component={Home}
+       options={{headerShown:false}} />
       <Stack.Screen name="Search" component={Search} />
+      <Stack.Screen name="Myheader" component={Myheader}
+      options={{headerShown:false,
+        title:'Header',
+        //this is good but slow you app because it render every time so we declare outside components
+        // headerTitle:()=> <Button title='Vishal'onPress={()=>{}} color={red} />,
+        // headerRight:()=><Button/>,
+        // headerLeft:()=> <Button/>
+
+      }} />
       <Stack.Screen name="Profile" component={Profile} />
+      <Stack.Screen name="Example" component={Example}/>
+
     </Stack.Navigator>
   )
 }
