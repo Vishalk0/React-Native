@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Text, View, Image, SectionList,TouchableOpacity, Alert, StyleSheet, useColorScheme, FlatList, Button, TextInput } from 'react-native';
+import { Text, View, Image, SectionList, TouchableOpacity, Alert, StyleSheet, useColorScheme, FlatList, Button, TextInput } from 'react-native';
 // import Home from './src/screen/Home'
 // import Profile from './src/screen/Profile'
 // import Search from './src/screen/Search'
@@ -9,6 +9,8 @@ import { Text, View, Image, SectionList,TouchableOpacity, Alert, StyleSheet, use
 import UseEffectHook from './src/UseEffect(lifecycle)/UseEffectHook'
 import Togglebtn from './src/Component/Togglebtn'
 import { SearchBar } from 'react-native-screens';
+import { NavigationContainer } from '@react-navigation/native';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 
 // import { createNativeStackNavigator } from '@react-navigation/native-stack';
@@ -19,25 +21,28 @@ import { SearchBar } from 'react-native-screens';
 const StackNavigation = () => {
   return (
     <Stack.Navigator initialRouteName='Home'
-    screenOptions={{headerStyle:{
-      backgroundColor:"yellow"
-    }}}
+      screenOptions={{
+        headerStyle: {
+          backgroundColor: "yellow"
+        }
+      }}
     >
 
       <Stack.Screen name="Home" component={Home}
-       options={{headerShown:false}} />
+        options={{ headerShown: false }} />
       <Stack.Screen name="Search" component={Search} />
       <Stack.Screen name="Myheader" component={Myheader}
-      options={{headerShown:false,
-        title:'Header',
-        //this is good but slow you app because it render every time so we declare outside components
-        // headerTitle:()=> <Button title='Vishal'onPress={()=>{}} color={red} />,
-        // headerRight:()=><Button/>,
-        // headerLeft:()=> <Button/>
+        options={{
+          headerShown: false,
+          title: 'Header',
+          //this is good but slow you app because it render every time so we declare outside components
+          // headerTitle:()=> <Button title='Vishal'onPress={()=>{}} color={red} />,
+          // headerRight:()=><Button/>,
+          // headerLeft:()=> <Button/>
 
-      }} />
+        }} />
       <Stack.Screen name="Profile" component={Profile} />
-      <Stack.Screen name="Example" component={Example}/>
+      <Stack.Screen name="Example" component={Example} />
 
     </Stack.Navigator>
   )
@@ -103,24 +108,68 @@ const Nav = () => {
     <NavigationContainer>
       <StackNavigation />
     </NavigationContainer>
-    
+
 
 
   );
 
 };
-const demo=()=>{
-return(
- <View>
- {/* <Togglebtn /> */}
- <SearchBar/>
+const demo = () => {
+  return (
+    <View>
+      {/* <Togglebtn /> */}
+      <SearchBar />
 
- </View>
-  
-)
+    </View>
+
+  )
+}
+const getTabBarIcon=(routeName,focused,color,size)=>{
+  let iconName
+  if(routeName==='Home'){
+    iconName = focused ? 'home':'home-outline';
+  }
+  else if(routeName==='Profile'){
+    iconName= focused ?'person':'person-outline'
+   }
+   else if (routeName==='Settings'){
+    iconName=focused ? 'settings': 'settings-outline'
+   }
+   return <Icon name={iconName} size={size} color={color}/>
+}
+const HomeScreen = () => {
+  <View>
+    <Text>Home Screen</Text>
+  </View>
+}
+const SettingScreen = () => {
+  <View>
+    <Text>Setting Screen</Text>
+  </View>
 }
 
-export default demo;
+//used this dependency to work with bottom navigation npm install @react-navigation/bottom-tabs
+const tab = createBottomTabNavigator()
+const Tabnavigation = () => {
+  return (
+    <NavigationContainer>
+      <tab.Navigator
+      screenOptions={({route})=>({
+        tabBarIcon:({focused,color,size})=>getTabBarIcon(route.name,focused,color,size), 
+        tabBarInactiveTintColor:'blue',
+        tabBarInactiveTintColor:'gray'
+      })}
+      >
+        <tab.Screen name='Home' component={HomeScreen} />
+        <tab.Screen name='Setting' component={SettingScreen} />
+      </tab.Navigator>
+    </NavigationContainer>
+  )
+
+}
+//npm i react-native-vector-image this is use for vector icon .
+
+export default Tabnavigation;
 
 const styles = StyleSheet.create({
   container: {
